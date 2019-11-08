@@ -1,2 +1,3 @@
 rust/target
-cpp/test
+cpp/io_test
+*outfile.txt

@@ -1,16 +1,16 @@
 use std::fs::File;
 use std::io::{Write, BufReader, BufRead};
-
+use std::io::BufWriter;
 
 fn main() -> std::io::Result<()> {
 
-    let filename_input = "./datafile.txt";
-    let filename_output = "./outfile.txt";
+    let filename_input = "../datafile.txt";
+    let filename_output = "../rust_outfile.txt";
 
     let input_file = File::open(filename_input).unwrap();
     let reader = BufReader::new(input_file);
 
-    let mut output_file = File::create(filename_output)?;
+    let mut output_file = BufWriter::new(File::create(filename_output).unwrap() );
 
     writeln!(output_file, "Student: Your Name")?;
 
@@ -31,26 +31,25 @@ fn main() -> std::io::Result<()> {
             let mut count_k = 0;
 
             for the_char in line.chars() {
-                match the_char.to_lowercase().to_string().as_ref() {
-                    "a" => count_a += 1,
-                    "b" => count_b += 1,
-                    "c" => count_c += 1,
-                    "d" => count_d += 1,
-                    "e" => count_e += 1,
-                    "f" => count_f += 1,
-                    "g" => count_g += 1,
-                    "h" => count_h += 1,
-                    "i" => count_i += 1,
-                    "j" => count_j += 1,
-                    "k" => count_k += 1,
+                match the_char.to_ascii_lowercase() {
+                    'a' => count_a += 1,
+                    'b' => count_b += 1,
+                    'c' => count_c += 1,
+                    'd' => count_d += 1,
+                    'e' => count_e += 1,
+                    'f' => count_f += 1,
+                    'g' => count_g += 1,
+                    'h' => count_h += 1,
+                    'i' => count_i += 1,
+                    'j' => count_j += 1,
+                    'k' => count_k += 1,
                     _ => println!( "Unknown count: {}", the_char)
                 }
             }
 
             writeln!( output_file, "--------------------------------------------------------------------------")?;
-            writeln!( output_file, "Line {}: ", line_number + 1)?;
+            writeln!( output_file, "Line {}: ", line_number)?;
             writeln!( output_file, "A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\tK")?;
-
 
             writeln!(
                  output_file,
@@ -66,7 +65,7 @@ fn main() -> std::io::Result<()> {
                  count_i,
                  count_j,
                  count_k,
-             )?;
+            )?;
 
             writeln!(output_file, "--------------------------------------------------------------------------\n")?;
         }
