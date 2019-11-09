@@ -1,3 +1,4 @@
 rust/target
 cpp/io_test
+cpp/io_test_static
 *outfile.txt
