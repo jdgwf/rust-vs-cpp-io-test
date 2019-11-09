@@ -48,7 +48,7 @@ fn main() -> std::io::Result<()> {
             }
 
             writeln!( output_file, "--------------------------------------------------------------------------")?;
-            writeln!( output_file, "Line {}: ", line_number + 1)?;
+            writeln!( output_file, "Line {}: ", (line_number + 1) )?;
             writeln!( output_file, "A\tB\tC\tD\tE\tF\tG\tH\tI\tJ\tK")?;
 
             writeln!(

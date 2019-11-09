@@ -70,6 +70,11 @@ int main() {
 					countI++;
 					break;
 				};
+				case 'J':
+				case 'j': {
+					countJ++;
+					break;
+				};
 				case 'K':
 				case 'k': {
 					countK++;
