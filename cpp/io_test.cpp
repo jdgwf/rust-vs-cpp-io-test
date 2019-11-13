@@ -7,7 +7,7 @@ std::ofstream outfile("../cpp_outfile.txt");
 
 int main() {
 
-	outfile << "Student: Your Name" << std::endl;
+	outfile << "Student: Your Name" << "\n";
 
 	int lineCount = 1;
 	for( std::string line; getline( infile, line ); )
@@ -83,8 +83,8 @@ int main() {
 			}
 		}
 
-		outfile << "--------------------------------------------------------------------------" << std::endl;
-		outfile << "Line " << lineCount << ":" << std::endl;
+		outfile << "--------------------------------------------------------------------------" << "\n";
+		outfile << "Line " << lineCount << ":" << "\n";
 		outfile << "A\t";
 		outfile << "B\t";
 		outfile << "C\t";
@@ -96,7 +96,7 @@ int main() {
 		outfile << "I\t";
 		outfile << "J\t";
 		outfile << "K\t";
-		outfile << std::endl;
+		outfile << "\n";
 
 		outfile << countA << "\t";
 		outfile << countB << "\t";
@@ -109,9 +109,9 @@ int main() {
 		outfile << countI << "\t";
 		outfile << countJ << "\t";
 		outfile << countK << "\t";
-		outfile << std::endl;
-		outfile << "--------------------------------------------------------------------------" << std::endl;
-		outfile << std::endl;
+		outfile << "\n";
+		outfile << "--------------------------------------------------------------------------" << "\n";
+		outfile << "\n";
 
 		lineCount++;
 	}

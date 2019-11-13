@@ -1,5 +1,6 @@
 cd rust
 cargo build --release
+strip ./target/release/io_test
 echo "---- timing rust release ./target/release/io_test ----"
 /usr/bin/time -v ./target/release/io_test
 
